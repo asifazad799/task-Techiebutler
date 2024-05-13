@@ -4,7 +4,7 @@ import { usePosts } from "../../api";
 
 import { PaginationParams } from "../../types";
 
-import { DefaultLayout } from "../../components";
+import { PostCard } from "../../components";
 
 export function Posts() {
   const [pagination, setPagination] = useState<PaginationParams>({
@@ -38,9 +38,7 @@ export function Posts() {
           <div className="flex gap-[10px] my-1 mb-4 flex-col mx-1">
             {_posts?.map((post) => {
               //post card
-              return (
-                <div className="bg-gray-300 bg-opacity-5 h-[110px] w-full rounded-md"></div>
-              );
+              return <PostCard post={post} />;
             })}
           </div>
           <button
