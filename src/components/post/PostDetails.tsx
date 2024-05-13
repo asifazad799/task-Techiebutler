@@ -27,7 +27,7 @@ export function PostDetails({ postId, onClose }: Props) {
   return (
     <>
       <h2 className="text-[20px] font-semibold">Post Details</h2>
-      <div className="bg-gray-300 bg-opacity-5 min-h-[110px] w-[319px] rounded-md p-4">
+      <div className="bg-gray-300 bg-opacity-5 min-h-[110px] w-[400px] rounded-md p-4">
         <p className="text-[15px]">
           <strong>ID:</strong> {post?.id}
         </p>

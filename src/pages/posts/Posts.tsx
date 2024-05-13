@@ -66,7 +66,7 @@ export function Posts() {
           </div>
         </div>
         {selectedPostId && (
-          <div className="w-[200px]">
+          <div className="w-[400px]">
             <PostDetails
               postId={selectedPostId}
               onClose={handleClosePostDetails}
