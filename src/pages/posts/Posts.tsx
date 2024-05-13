@@ -1,11 +1,10 @@
 import React, { useCallback, useMemo, useState } from "react";
 
-import { usePost, usePosts } from "../../api";
+import { usePosts } from "../../api";
 
 import { PaginationParams } from "../../types";
 
-import { PostCard } from "../../components";
-import { PostDetails } from "../../components/post/PostDetails";
+import { Button, PostCard, PostDetails } from "../../components";
 
 export function Posts() {
   const [pagination, setPagination] = useState<PaginationParams>({
@@ -59,12 +58,11 @@ export function Posts() {
                 );
               })}
             </div>
-            <button
-              className="p-2 px-3 rounded-md bg-gray-400 mt-3 text-[14px] mb-3 w-full"
-              onClick={handleLoadMore}
-            >
-              load more
-            </button>
+            <Button
+              className="mb-3 w-full"
+              title="load more"
+              handleClick={handleLoadMore}
+            />
           </div>
         </div>
         {selectedPostId && (
