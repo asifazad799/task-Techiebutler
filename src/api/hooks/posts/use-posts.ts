@@ -17,23 +17,20 @@ export function usePosts({ params }: Props) {
   const [posts, setPosts] = useState<Posts>({ allPosts: [], totalPosts: 0 });
   const [loading, setLoading] = useState(false);
 
-  const getPosts = useCallback(
-    async ({ params }) => {
-      setLoading((prev) => !prev);
-      const { data, headers } = await API.get("/posts", { params });
-      setPosts((prev) => {
-        let newArray = prev.allPosts.flat();
+  const getPosts = async ({ params }) => {
+    setLoading((prev) => !prev);
+    const { data, headers } = await API.get("/posts", { params });
+    setPosts((prev) => {
+      let newArray = prev.allPosts.flat();
 
-        return {
-          ...prev,
-          allPosts: [newArray, data],
-          totalPosts: headers["x-total-count"],
-        };
-      });
-      setLoading((prev) => !prev);
-    },
-    [params]
-  );
+      return {
+        ...prev,
+        allPosts: [newArray, data],
+        totalPosts: headers["x-total-count"],
+      };
+    });
+    setLoading((prev) => !prev);
+  };
 
   useEffect(() => {
     getPosts({ params });
