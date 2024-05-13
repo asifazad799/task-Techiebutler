@@ -8,16 +8,16 @@ import { DefaultLayout } from "./components";
 
 function App() {
   return (
-    <DefaultLayout>
-      <div className="app">
+    <div className="app">
+      <DefaultLayout>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Posts />} />
             <Route path="*" element={<NoPageFound />} />
           </Routes>
         </BrowserRouter>
-      </div>
-    </DefaultLayout>
+      </DefaultLayout>
+    </div>
   );
 }
 

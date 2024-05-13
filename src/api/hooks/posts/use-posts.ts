@@ -21,11 +21,15 @@ export function usePosts({ params }: Props) {
     async ({ params }) => {
       setLoading((prev) => !prev);
       const { data, headers } = await API.get("/posts", { params });
-      setPosts((prev) => ({
-        ...prev,
-        allPosts: [...data, ...prev.allPosts],
-        totalPosts: headers["x-total-count"],
-      }));
+      setPosts((prev) => {
+        let newArray = prev.allPosts.flat();
+
+        return {
+          ...prev,
+          allPosts: [newArray, data],
+          totalPosts: headers["x-total-count"],
+        };
+      });
       setLoading((prev) => !prev);
     },
     [params]
