@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { API } from "../../config";
 
-export function usePost({ id }) {
+export function usePost({ id }: { id: number | null }) {
   const [loading, setLoading] = useState(false);
   const [post, setPost] = useState<any>({});
 
@@ -16,7 +16,7 @@ export function usePost({ id }) {
   };
 
   useEffect(() => {
-    getPost(id);
+    if (id) getPost(id);
   }, [id]);
 
   return { post, loading };

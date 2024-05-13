@@ -5,7 +5,7 @@ import { usePost } from "../../api";
 import { Button } from "../common";
 
 type Props = {
-  postId: number;
+  postId: number | null;
   onClose: () => void;
 };
 
