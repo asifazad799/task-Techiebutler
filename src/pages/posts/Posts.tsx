@@ -1,8 +1,10 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 
 import { usePosts } from "../../api";
 
 import { PaginationParams } from "../../types";
+
+import { DefaultLayout } from "../../components";
 
 export function Posts() {
   const [pagination, setPagination] = useState<PaginationParams>({
