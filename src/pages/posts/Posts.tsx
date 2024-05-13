@@ -4,6 +4,8 @@ import { usePosts } from "../../api";
 
 import { PaginationParams } from "../../types";
 
+import "./posts.css";
+
 import { Button, PostCard, PostDetails } from "../../components";
 
 export function Posts() {
@@ -40,15 +42,15 @@ export function Posts() {
   }, []);
 
   return (
-    <>
-      <div className="flex justify-center items-start gap-3">
-        <div className="w-[400px] z-50">
+    <div className="overflow-auto w-full">
+      <div className="flex justify-center items-start gap-3 posts-container">
+        <div className="w-[420px] z-50 flex-shrink-0">
           <h2 className="text-[20px] font-semibold">Posts</h2>
-          <div className="w-full h-[96vh] overflow-auto mb-3 px-1">
+          <div className=" h-[96vh] overflow-auto mb-3 px-1">
             {/* post list */}
             <div className="flex gap-[10px] my-1 mb-4 flex-col">
               {_posts?.map((post) => {
-                //post card
+                // post card
                 return (
                   <PostCard
                     key={post?.id}
@@ -66,7 +68,7 @@ export function Posts() {
           </div>
         </div>
         {selectedPostId && (
-          <div className="w-[400px]">
+          <div className="w-[400px] flex-shrink-0">
             <PostDetails
               postId={selectedPostId}
               onClose={handleClosePostDetails}
@@ -74,6 +76,6 @@ export function Posts() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

@@ -8,7 +8,7 @@ export function DefaultLayout({ children }) {
       <div className="absolute top-[-106px] left-[-290px]">
         <BluredPloygons />
       </div>
-      <div className="absolute bottom-[-65px] right-[-84px]">
+      <div className="absolute bottom-[-65px] right-[17px]">
         <BluredPloygons />
       </div>
       <div className="m-3">{children}</div>

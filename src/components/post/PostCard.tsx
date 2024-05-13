@@ -8,7 +8,7 @@ export const PostCard = React.memo(({ post, getPost }: any) => {
   console.log("changing");
 
   return (
-    <div className="bg-gray-300 bg-opacity-5 min-h-[110px] w-full rounded-md p-4">
+    <div className="bg-gray-300 bg-opacity-5 min-h-[110px] w-[400px] rounded-md p-4">
       <p className="text-[15px]">{`Id : ${post?.id}`}</p>
       <p className="text-[15px]">{`Title : ${post?.title}`}</p>
       <Button
