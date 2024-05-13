@@ -1,10 +1,18 @@
 import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 import "./App.css";
+import { NoPageFound, Posts } from "./pages";
 
 function App() {
   return (
-    <div className="h-screen w-screen bg-red-800">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Posts />} exact />
+          <Route path="*" element={<NoPageFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
