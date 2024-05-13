@@ -19,9 +19,9 @@ export function Posts() {
 
   const _posts = useMemo(() => {
     // heavy computation goes here
-    // start of applying this only to the new data
+    // start of applying changes, this only to the new data since the old data is already in the cache
     let newData = posts?.allPosts[1];
-    // end of applying this only to the new data
+    // end of applying changes
 
     return posts?.allPosts?.length ? [...posts?.allPosts[0], ...newData] : [];
   }, [posts]);
