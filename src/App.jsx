@@ -9,7 +9,7 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Posts />} exact />
+          <Route path="/" element={<Posts />} />
           <Route path="*" element={<NoPageFound />} />
         </Routes>
       </BrowserRouter>
