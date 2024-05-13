@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../../components";
 
 export function NoPageFound() {
   return (
@@ -8,9 +9,7 @@ export function NoPageFound() {
         <h1 className="text-red-500 text-center mb-[5px]">No Page Found</h1>
         <button>
           <Link to={"/"}>
-            <button className="bg-gray-300 p-3 rounded-md">
-              <h2>Go to back home</h2>
-            </button>
+            <Button title="Go to back home" />
           </Link>
         </button>
       </div>
